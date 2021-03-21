@@ -102,3 +102,4 @@ dist
 
 # TernJS port file
 .tern-port
+5-tenedores/app/utils/firebase.js
