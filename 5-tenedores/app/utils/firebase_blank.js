@@ -1,7 +1,8 @@
 // add firebase config and rename to firebase.js
-var firebaseConfig = {
+import firebase from 'firebase/app'
+
+const firebaseConfig = {
 
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+export const firebaseApp = firebase.initializeApp(firebaseConfig);

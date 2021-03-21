@@ -19,7 +19,7 @@ export default function Navigation() {
                 initialRouteName="restaurants"
                 tabBarOptions={{
                     inactiveTintColor: "#646464",
-                    activeTintColor: "#00a680"
+                    activeTintColor: "#b967ff"
                 }}
                 screenOptions={({ route }) => ({
                     tabBarIcon: ({ color }) => screenOptions(route, color)
