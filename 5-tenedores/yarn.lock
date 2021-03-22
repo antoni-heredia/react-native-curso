@@ -3533,6 +3533,13 @@ expo-font@~8.4.0:
     fbjs "1.0.0"
     fontfaceobserver "^2.1.0"
 
+expo-google-sign-in@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/expo-google-sign-in/-/expo-google-sign-in-9.0.0.tgz#930b7372e180278afdecc70814e389895d57871c"
+  integrity sha512-empSm+x8kfhfNcqX6w0oVphmMqoObCnJ170y0YUAkIsy4fPgKJvKJuKXQjSzFm7szB+jY5MFAMS1Z4uR30m0sg==
+  dependencies:
+    invariant "^2.2.4"
+
 expo-keep-awake@~8.4.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-8.4.0.tgz#346d0988e6364c46050fef4b7829f302ef3e603d"
