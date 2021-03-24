@@ -7,10 +7,13 @@ import Loading from "../../components/Loading"
 import * as firebase from "firebase"
 
 import InfoUser from "../Account/InfoUser"
+import AccountOptions from "../Account/AccountOptions"
+
 export default function UserLogeed() {
     const [userInfo, setUserInfo] = useState(null)
     const [loading, setLoading] = useState(false);
     const [loadingText, setLoadingText] = useState("");
+    const [reloadUserInfo, setReloadUserInfo] = useState(false);
     const toastRef = useRef();
 
     useEffect(() => {
@@ -18,11 +21,19 @@ export default function UserLogeed() {
             const user = await firebase.auth().currentUser
             setUserInfo(user)
         })()
-    }, [])
+        setReloadUserInfo(false)
+    }, [reloadUserInfo])
 
     return (
         <View style={styles.viewUserInfo}>
-            {userInfo && <InfoUser userInfo={userInfo} />}
+            {userInfo && <InfoUser
+                toastRef={toastRef}
+                userInfo={userInfo}
+                setLoading={setLoading}
+                setLoadingText={setLoadingText}
+            />
+            }
+            <AccountOptions setReloadUserInfo={setReloadUserInfo} userInfo={userInfo} toastRef={toastRef} />
             <Button
                 title="Cerrar sesión"
                 buttonStyle={styles.btnCloseSesion}
