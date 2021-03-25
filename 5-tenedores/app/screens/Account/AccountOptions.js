@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { ListItem } from "react-native-elements"
 import { map } from "lodash"
 
@@ -7,11 +7,17 @@ import Modal from "../../components/Modal"
 
 import ChangeDisplayNameForm from "../../components/Account/Changes/ChangeDisplayNameForm"
 import ChangeEmailForm from "../../components/Account/Changes/ChangeEmailForm"
+import ChangePassword from "../../components/Account/Changes/ChangePassword"
+
+
+
 
 export default function AccountOptions(props) {
     const { userInfo, toastRef, setReloadUserInfo } = props
     const [showModal, setShowModal] = useState(false);
     const [renderComponent, setRenderComponent] = useState(null);
+
+
     const selectComponents = (key) => {
         switch (key) {
             case "displayName":
@@ -37,7 +43,10 @@ export default function AccountOptions(props) {
                 break
             case "password":
                 setRenderComponent(
-                    <Text>Cambiando password</Text>
+                    <ChangePassword
+                        setShowModal={setShowModal}
+                        toastRef={toastRef}
+                    />
                 )
                 setShowModal(true)
                 break
